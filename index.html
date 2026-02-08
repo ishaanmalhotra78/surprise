@@ -1,59 +1,93 @@
-<style>
-  body {
-    margin: 0;
-    min-height: 100vh;
-    padding: 20px;
-    background:
-      radial-gradient(circle at 15% 20%, #ffd1dc, transparent 45%),
-      radial-gradient(circle at 85% 30%, #ffc0cb, transparent 45%),
-      radial-gradient(circle at 50% 80%, #ffb6c1, transparent 45%),
-      linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine ❤️</title>
 
-  .box {
-    width: 100%;
-    max-width: 380px;
-    padding: 40px 28px;
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 26px;
-    text-align: center;
-    box-shadow:
-      0 25px 60px rgba(255, 77, 109, 0.35);
-  }
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 15% 20%, #ffd1dc, transparent 45%),
+        radial-gradient(circle at 85% 30%, #ffc0cb, transparent 45%),
+        radial-gradient(circle at 50% 80%, #ffb6c1, transparent 45%),
+        linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-  h2 {
-    font-size: 26px;
-    line-height: 1.4;
-    color: #ff2f6d;
-    margin-bottom: 30px;
-  }
+    .box {
+      width: 100%;
+      max-width: 380px;
+      padding: 40px 28px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 26px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(255, 77, 109, 0.35);
+    }
 
-  .btns {
-    position: relative;
-    height: 120px;
-  }
+    h2 {
+      font-size: 26px;
+      line-height: 1.4;
+      color: #ff2f6d;
+      margin-bottom: 32px;
+    }
 
-  button {
-    padding: 14px 24px;
-    font-size: 18px;
-    border-radius: 14px;
-    border: none;
-    position: absolute;
-  }
+    .btns {
+      position: relative;
+      height: 120px;
+    }
 
-  #yes {
-    left: 20px;
-    background: linear-gradient(135deg, #ff4d6d, #ff758f);
-    color: white;
-    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.45);
-  }
+    button {
+      padding: 14px 24px;
+      font-size: 18px;
+      border-radius: 14px;
+      border: none;
+      position: absolute;
+      cursor: pointer;
+    }
 
-  #no {
-    right: 20px;
-    background: #f2f2f2;
-  }
-</style>
+    #yes {
+      left: 20px;
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      color: white;
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.45);
+    }
+
+    #no {
+      right: 20px;
+      background: #f2f2f2;
+    }
+  </style>
+
+  <script>
+    function goYes() {
+      window.location.href = "yes.html";
+    }
+
+    function runAway(btn) {
+      const maxX = 200;
+      const maxY = 70;
+      btn.style.left = Math.random() * maxX + "px";
+      btn.style.top = Math.random() * maxY + "px";
+    }
+  </script>
+</head>
+
+<body>
+
+  <div class="box">
+    <h2>Malvika, will you be my Valentine? ❤️</h2>
+
+    <div class="btns">
+      <button id="yes" onclick="goYes()">Yes 💕</button>
+      <button id="no" onclick="runAway(this)">No 🙃</button>
+    </div>
+  </div>
+
+</body>
+</html>
