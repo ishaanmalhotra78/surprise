@@ -1,10 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YES!</title>
+  <meta charset="UTF-8">
+  <title>YES ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, #ffd1dc, transparent 40%),
+        linear-gradient(135deg, #ff5f9e, #ff85c2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .msg {
+      z-index: 2;
+      animation: fade 1.4s ease;
+    }
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: normal;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-10vh) rotate(0deg); }
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+  </style>
 </head>
-<body style="background:pink; text-align:center; font-family:Arial; padding-top:40vh;">
-  <h1>YESSS 🥹❤️</h1>
-  <h2>You’re stuck with me 😌</h2>
+
+<body>
+
+  <div class="msg">
+    <h1>YESSS 🥹❤️</h1>
+    <h2>You’re stuck with me 😌</h2>
+  </div>
+
+  <script>
+    const colors = ["#ff4d6d", "#ffd6e0", "#ffffff", "#ff85c2"];
+
+    function confetti() {
+      const c = document.createElement("div");
+      c.className = "confetti";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+      c.style.width = c.style.height = Math.random()*6 + 6 + "px";
+      c.style.animationDuration = Math.random()*3 + 3 + "s";
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 6000);
+    }
+
+    for (let i = 0; i < 40; i++) setTimeout(confetti, i * 100);
+    setInterval(confetti, 350);
+  </script>
+
 </body>
 </html>
